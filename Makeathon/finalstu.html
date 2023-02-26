@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Kanit' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <title>REGISTERATION FORM FOR STUDENT</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Kanit' rel='stylesheet'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+  <style>
+    * {box-sizing: border-box;}
+        body{
+            
+            background-size: cover;
+            margin: 0;
+            font-family: 'kanit',sans-serif;
+            height: 100vh;
+        }
+        nav{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rbga( 193,193,193,0.25);
+            box-shadow: 0 8px 32px 0 rbga(31,38,135,0.37);
+            backdrop-filter: blur(4px);
+            border: 1px solid rbga( 255, 255, 255, 0.18);
+            color: #e50a0a;
+            z-index: 99;
+        }
+        
+                nav .container{
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+            padding: 0 1.5em;
+
+        }
+        nav a{
+            text-decoration: none;
+            color: #f51616;
+            transition: 0.3s;
+        }
+        nav a:hover{
+            color: #005dc7;
+        }
+        nav .menu{
+            padding: 0;
+            margin: 0;
+        }
+        nav .menu li{
+            display: inline-block;
+            margin: 0 0.7em;
+        }
+        nav .nav-btn::before{
+            font-family: 'FontAwesome';
+            content: '\f0c9\ ';
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #f4f1f1;
+            color: #fff;
+            width: 100%;
+            height: 100%;
+            font-size: 2.1em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.4s;
+        }
+        nav .nav-btn{
+            width: 2.5em;
+            height: 2.5em;
+            display: none;
+            position: relative;
+            cursor: pointer;
+        }
+        nav .nav-btn:hover:before{
+            color: #005dc7;
+        }
+      @media screen and (max-width: 900px){
+        nav .nav-btn:checked + .menu{
+            height: 12em;
+            overflow-y: scroll;
+            overflow: overlay;
+        }
+        nav .menu{
+            position: absolute;
+            top: 4.7em;
+            left: 0;
+            width: 100%;
+            background: transparent;
+            padding: 0 1.5em;
+            overflow-y: hidden;
+            transition: 0.7s;
+            height: 0;
+        }
+        nav .menu li{
+            display: block;
+            margin: 1em 0;
+        }
+        nav .menu li:nth :nth-child(1){
+            margin-top: 1.5em;
+        }
+        nav .nav-btn{
+            display: block;
+        }
+
+      }
+      ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+
+/*footer this will be editted further*/
+
+
+footer{
+  display: block;
+  position: relative;
+  background: transparent;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+footer::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 100px;
+  height: 1px;
+  width: 100%;
+  background: #AFAFB6;
+}
+footer .content{
+  max-width: 1250px;
+  margin: auto;
+  padding: 30px 40px 40px 40px;
+}
+footer .content .top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.content .top .logo-details{
+  color: #fff;
+  font-size: 30px;
+}
+.content .top .media-icons{
+  display: flex;
+}
+.content .top .media-icons a{
+  height: 40px;
+  width: 40px;
+  margin: 0 8px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+  font-size: 17px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+.top .media-icons a:nth-child(1){
+  background: #4267B2;
+}
+.top .media-icons a:nth-child(1):hover{
+  color: #4267B2;
+  background: #fff;
+}
+.top .media-icons a:nth-child(2){
+  background: #1DA1F2;
+}
+.top .media-icons a:nth-child(2):hover{
+  color: #1DA1F2;
+  background: #fff;
+}
+.top .media-icons a:nth-child(3){
+  background: #E1306C;
+}
+.top .media-icons a:nth-child(3):hover{
+  color: #E1306C;
+  background: #fff;
+}
+.top .media-icons a:nth-child(4){
+  background: #0077B5;
+}
+.top .media-icons a:nth-child(4):hover{
+  color: #0077B5;
+  background: #fff;
+}
+.top .media-icons a:nth-child(5){
+  background: #FF0000;
+}
+.top .media-icons a:nth-child(5):hover{
+  color: #FF0000;
+  background: #fff;
+}
+footer .content .link-boxes{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+footer .content .link-boxes .box{
+  width: calc(100% / 5 - 10px);
+}
+.content .link-boxes .box .link_name{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  position: relative;
+}
+.link-boxes .box .link_name::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 35px;
+  background: #fff;
+}
+.content .link-boxes .box li{
+  margin: 6px 0;
+  list-style: none;
+}
+.content .link-boxes .box li a{
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: all 0.4s ease
+}
+.content .link-boxes .box li a:hover{
+  opacity: 1;
+  text-decoration: underline;
+}
+.content .link-boxes .input-box{
+  margin-right: 55px;
+}
+.link-boxes .input-box input{
+  height: 40px;
+  width: calc(100% + 55px);
+  outline: none;
+  border: 2px solid #AFAFB6;
+  background: transparent;
+  border-radius: 4px;
+  padding: 0 15px;
+  font-size: 15px;
+  color: #fff;
+  margin-top: 5px;
+}
+.link-boxes .input-box input::placeholder{
+  color: #AFAFB6;
+  font-size: 16px;
+}
+.link-boxes .input-box input[type="button"]{
+  background: #fff;
+  color: black;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 4px 0;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.input-box input[type="button"]:hover{
+  opacity: 1;
+}
+footer .bottom-details{
+  width: 100%;
+  background: transparent;
+}
+footer .bottom-details .bottom_text{
+  max-width: 1250px;
+  margin: auto;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.bottom-details .bottom_text span,
+.bottom-details .bottom_text a{
+  font-size: 14px;
+  font-weight: 300;
+  color: #fff;
+  opacity: 0.8;
+  text-decoration: none;
+}
+.bottom-details .bottom_text a:hover{
+  opacity: 1;
+  text-decoration: underline;
+}
+.bottom-details .bottom_text a{
+  margin-right: 10px;
+}
+@media (max-width: 900px) {
+  footer .content .link-boxes{
+    flex-wrap: wrap;
+  }
+  footer .content .link-boxes .input-box{
+    width: 40%;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 700px){
+  footer{
+    position: relative;
+  }
+  .content .top .logo-details{
+    font-size: 26px;
+  }
+  .content .top .media-icons a{
+    height: 35px;
+    width: 35px;
+    font-size: 14px;
+    line-height: 35px;
+  }
+  footer .content .link-boxes .box{
+    width: calc(100% / 3 - 10px);
+  }
+  footer .content .link-boxes .input-box{
+    width: 60%;
+  }
+  .bottom-details .bottom_text span,
+  .bottom-details .bottom_text a{
+    font-size: 12px;
+  }
+}
+@media (max-width: 520px){
+  footer::before{
+    top: 145px;
+  }
+  footer .content .top{
+    flex-direction: column;
+  }
+  .content .top .media-icons{
+    margin-top: 16px;
+  }
+  footer .content .link-boxes .box{
+    width: calc(100% / 2 - 10px);
+  }
+  footer .content .link-boxes .input-box{
+    width: 100%;
+  }
+}
+ .middle{
+  display: inline-block;
+  position: relative;
+  top: 90px;
+  padding: 40px;
+  border: 2px solid black;
+  width: 1505px;
+  height: 800px;
+  margin: 10px;
+ }
+ body {
+  
+  align-items: center;
+  background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+ 
+}
+
+/* Style the registration form container */
+.container {
+    display: inline-block;
+  margin: 10px;
+  padding: 15px;
+  align-items: center;
+ 
+}
+
+/* Style the registration form card */
+.card {
+  border-radius: 30px;
+  border: 2px solid black;
+  padding: 10px;
+}
+
+/* Style the registration form card body */
+.card-body {
+ 
+  background: rgb(2,0,36);
+
+}
+
+/* Style the registration form card title */
+.card-title {
+  color: #C04A82;
+}
+
+/* Style the registration form labels */
+label {
+  font-weight: bold;
+}
+
+/* Style the registration form buttons */
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+  border-radius: 2rem;
+  text-transform: uppercase;
+ /* padding: 0.75rem 1.5rem;*/
+  margin-top: 1rem;
+}
+
+/* Style the registration form Google and Facebook buttons */
+.btn-google {
+    align-items: center;
+  background-color: #ea4335;
+  color: #fff;
+}
+
+.btn-facebook {
+  background-color: #3b5998;
+  color: #fff;
+}
+
+/* Style the registration form checkboxes */
+.form-check-label {
+  padding-left: 1.5rem;
+}
+
+/* Style the registration form input fields */
+.form-control {
+  border-radius: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Style the registration form remember password checkbox */
+.form-check-input {
+  margin-right: 0.25rem;
+}
+
+/* Style the registration form password fields */
+#floatingPassword,
+#floatingPasswordConfirm {
+  border-radius: 2rem;
+}
+
+.fix{
+    position:absolute;
+    top: 17%;
+   background-color:#FFDEFA;
+    left:30%;
+    border-radius: 10%;
+    
+    
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+  </style>
+</head>
+<body>
+    <nav>
+      <div class="container">
+        <a href="#" class="brand">
+        <h2 style="margin-top: 30px;">KRYPTONITES</h2></a>
+        <input type="checkbox" class="nav-btn">
+        <ul class="menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="#">
+             <div class="dropdown">
+              <span>REGISTRATION</span>
+              <div class="dropdown-content">
+                <p> <a href="finalfac.html"> Faculty</a></p>
+                <p> <a href="finalstu.html"> Student</a></p>
+                </div>
+             </div>
+            </a></li>
+            <li><a href="#" >REVIEW</a></li>
+            <li><a href="header.html">FACULTY DETAILS</a></li>
+            <li><a href="tel:7019400282">CONTACT</a></li>
+        </ul>
+    </div>
+    </nav>
+      <div class="middle">
+       <div class="qoute">
+        <img src="" class="" alt="">
+       </div>
+      </div>
+
+    <footer>
+        <div class="content">
+          <div class="top">
+            <div class="logo-details">
+                
+              <span class="logo_name">KRYPTONITES</span>
+            </div>
+            <div class="media-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="link-boxes">
+            <ul class="box">
+              <li class="link_name">EDCURE</li>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Teach</a></li>
+              <li><a href="#">Learn</a></li>
+              <li><a href="#">Get started</a></li>
+            </ul>
+            <ul class="box">
+              <li class="link_name">Services</li>
+              <li><a href="#">online classes</a></li>
+              <li><a href="#">home tution</a></li>
+              <li><a href="#">tution center</a></li>
+              
+            </ul>
+            <ul class="box">
+              <li class="link_name">Account</li>
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">My account</a></li>
+              <li><a href="#">Course opted</a></li>
+              <li><a href="#">Purchase</a></li>
+            </ul>
+            <ul class="box">
+              <li class="link_name">Courses</li>
+              <li><a href="#">Schooling education</a></li>
+              <li><a href="#">UG education</a></li>
+              <li><a href="#">PG education</a></li>
+              <li><a href="#">Others</a></li>
+            </ul>
+            <ul class="box input-box">
+              <li class="link_name">Subscribe</li>
+              <li><input type="text" placeholder="Enter your email"></li>
+              <li><input type="button" value="Subscribe"></li>
+            </ul>
+          </div>
+        </div>
+        <div class="bottom-details">
+          <div class="bottom_text">
+            <span class="copyright_text">Copyright © 2021 <a href="#">Kryptonites.</a>All rights reserved</span>
+            <span class="policy_terms">
+              <a href="#">Privacy policy</a>
+              <a href="#">Terms & condition</a>
+            </span>
+          </div>
+        </div>
+      </footer>
+    
+      <div class="fix">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 col-xl-10 mx-auto">
+              <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+                <div class="card-img-left d-none d-md-flex">
+                  <!-- Background image for card set in CSS! -->
+                </div>
+               <div class="card-body p-4 p-sm-5">
+                  <h1 class="card-title text-center mb-5 fw-light fs-5">REGISTERATION FORM FOR STUDENT</h1>
+                  <form>
+                    <div class="form-group">
+                      <label for="name">Student Name:</label>
+                      <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="experience">Date of Birth</label>
+                      <input type="date" id="experience" name="experience" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                      <label>Gender:</label>
+                      <div class="form-check">
+                        <input type="checkbox" id="male" name="gender" value="male" class="form-check-input">
+                        <label for="male" class="form-check-label">Male</label>
+                      </div>
+                      <div class="form-check">
+                        <input type="checkbox" id="female" name="gender" value="female" class="form-check-input">
+                        <label for="female" class="form-check-label">Female</label>
+                      </div>
+                      <div class="form-check">
+                        <input type="checkbox" id="other" name="gender" value="other" class="form-check-input">
+                        <label for="other" class="form-check-label">Other</label>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="field">Course:</label>
+                      <select id="field" name="field" class="form-control" required>
+                        <option value="">Select a field</option>
+                        <option value="Class 5"> class 5 </option>
+                          <option value="Class 6">class 6 </option>
+                          <option value="Class 7">class 7 </option>
+                          <option value="Class 8">class 8 </option>
+                          <option value="Class 9">class 9 </option>
+                          <option value="Class 10"> class 10 </option>
+                          <option value="Class 11">class 11 </option>
+                          <option value="Class 12">class 12 </option>
+                          <option value="Undergraduate"> Undergraduate </option>
+                           <option value="Postgraduate"> Postgraduate   </option> 
+                          
+                         
+      
+                      </select>
+                    </div>
+                    <div class="form-floating mb-3" style="padding: 2px;">
+                      <p> <label for="floatingInputUsername">Apply your certificate here:</label>
+                     <input type="file" class="form-control" id="floatingInputUsername" placeholder="myusername" required autofocus>
+                      </p>
+                   </div> 
+      
+      <div class="form-floating mb-3">
+                        <label for="floatingPassword">Password:</label>
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                      </div>
+                      <div class="form-floating mb-3">
+                        <label for="floatingPasswordConfirm">Confirm Password:</label>
+                        <input type="password" class="form-control" id="floatingPasswordConfirm" placeholder="Confirm Password">
+                      </div>
+                      <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
+                        <label class="form-check-label" for="rememberPasswordCheck">
+                          Remember password
+                        </label>
+                      </div>
+                      <div class="d-grid">
+                        <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Register</button>
+                      </div>
+                      <hr class="my-4">
+                      <div class="d-grid mb-2">
+                        <button class="btn btn-google btn-login fw-bold" type="submit"><i class='fab fa-google-plus-g'></i> Sign up with Google</button>
+                      </div>
+                      <div class="d-grid">
+                        <button class="btn btn-facebook btn-login fw-bold" type="submit"><i class="fab fa-facebook-f"></i> Sign up with Facebook</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+</body>
+</html>

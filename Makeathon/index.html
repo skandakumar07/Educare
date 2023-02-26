@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Kanit' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="nofollow" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        * {box-sizing: border-box;}
+        body{
+            /*background: linear-gradient(to top right, #3399ff 14%, #00ffcc 90%) ;*/
+            background: linear-gradient(to bottom right, #ffff66 1%, #cc9900 81%);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            font-family: 'kanit',sans-serif;
+            height: 100vh;
+        }
+        nav{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rbga( 193,193,193,0.25);
+            box-shadow: 0 8px 32px 0 rbga(31,38,135,0.37);
+            backdrop-filter: blur(4px);
+            border: 1px solid rbga( 255, 255, 255, 0.18);
+            color: #f6f6f6;
+            z-index: 99;
+        }
+        
+                nav .container{
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+            padding: 0 1.5em;
+
+        }
+        nav a{
+            text-decoration: none;
+            color: #f6f6f6;
+            transition: 0.3s;
+        }
+        nav a:hover{
+            color: #005dc7;
+        }
+        nav .menu{
+            padding: 0;
+            margin: 0;
+        }
+        nav .menu li{
+            display: inline-block;
+            margin: 0 0.7em;
+        }
+        nav .nav-btn::before{
+            font-family: 'FontAwesome';
+            content: '\f0c9\ ';
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #f4f1f1;
+            color: #fff;
+            width: 100%;
+            height: 100%;
+            font-size: 2.1em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.4s;
+        }
+        nav .nav-btn{
+            width: 2.5em;
+            height: 2.5em;
+            display: none;
+            position: relative;
+            cursor: pointer;
+        }
+        nav .nav-btn:hover:before{
+            color: #005dc7;
+        }
+      @media screen and (max-width: 900px){
+        nav .nav-btn:checked + .menu{
+            height: 12em;
+            overflow-y: scroll;
+            overflow: overlay;
+        }
+        nav .menu{
+            position: absolute;
+            top: 4.7em;
+            left: 0;
+            width: 100%;
+            background: transparent;
+            padding: 0 1.5em;
+            overflow-y: hidden;
+            transition: 0.7s;
+            height: 0;
+        }
+        nav .menu li{
+            display: block;
+            margin: 1em 0;
+        }
+        nav .menu li:nth :nth-child(1){
+            margin-top: 1.5em;
+        }
+        nav .nav-btn{
+            display: block;
+        }
+
+      }
+      ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+
+
+
+
+footer{
+  display: block;
+  position: relative;
+  background: transparent;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+footer::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 100px;
+  height: 1px;
+  width: 100%;
+  background: #AFAFB6;
+}
+footer .content{
+  max-width: 1250px;
+  margin: auto;
+  padding: 30px 40px 40px 40px;
+}
+footer .content .top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.content .top .logo-details{
+  color: #1229f3;
+  font-size: 30px;
+}
+.content .top .media-icons{
+  display: flex;
+}
+.content .top .media-icons a{
+  height: 40px;
+  width: 40px;
+  margin: 0 8px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+  font-size: 17px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+.top .media-icons a:nth-child(1){
+  background: #4267B2;
+}
+.top .media-icons a:nth-child(1):hover{
+  color: #4267B2;
+  background: #fff;
+}
+.top .media-icons a:nth-child(2){
+  background: #1DA1F2;
+}
+.top .media-icons a:nth-child(2):hover{
+  color: #1DA1F2;
+  background: #fff;
+}
+.top .media-icons a:nth-child(3){
+  background: #E1306C;
+}
+.top .media-icons a:nth-child(3):hover{
+  color: #E1306C;
+  background: #fff;
+}
+.top .media-icons a:nth-child(4){
+  background: #0077B5;
+}
+.top .media-icons a:nth-child(4):hover{
+  color: #0077B5;
+  background: #fff;
+}
+.top .media-icons a:nth-child(5){
+  background: #FF0000;
+}
+.top .media-icons a:nth-child(5):hover{
+  color: #FF0000;
+  background: #fff;
+}
+footer .content .link-boxes{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+footer .content .link-boxes .box{
+  width: calc(100% / 5 - 10px);
+}
+.content .link-boxes .box .link_name{
+  color:  #8F00FF;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  position: relative;
+}
+.link-boxes .box .link_name::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 35px;
+  background: #ffffff;
+}
+.content .link-boxes .box li{
+  margin: 6px 0;
+  list-style: none;
+}
+.content .link-boxes .box li a{
+  color: #000000;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: all 0.4s ease
+}
+.content .link-boxes .box li a:hover{
+  opacity: 1;
+  text-decoration: underline;
+}
+.content .link-boxes .input-box{
+  margin-right: 55px;
+}
+.link-boxes .input-box input{
+  height: 40px;
+  width: calc(100% + 55px);
+  outline: none;
+  border: 2px solid #AFAFB6;
+  background: transparent;
+  border-radius: 4px;
+  padding: 0 15px;
+  font-size: 15px;
+  color: #fff;
+  margin-top: 5px;
+}
+.link-boxes .input-box input::placeholder{
+  color: #AFAFB6;
+  font-size: 16px;
+}
+.link-boxes .input-box input[type="button"]{
+  background: #fff;
+  color: black;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 4px 0;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.input-box input[type="button"]:hover{
+  opacity: 1;
+}
+footer .bottom-details{
+  width: 100%;
+  background: transparent;
+}
+footer .bottom-details .bottom_text{
+  max-width: 1250px;
+  margin: auto;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.bottom-details .bottom_text span,
+.bottom-details .bottom_text a{
+  font-size: 14px;
+  font-weight: 300;
+  color: #000000;
+  opacity: 0.8;
+  text-decoration: none;
+}
+.bottom-details .bottom_text a:hover{
+  opacity: 1;
+  text-decoration: underline;
+}
+.bottom-details .bottom_text a{
+  margin-right: 10px;
+}
+@media (max-width: 900px) {
+  footer .content .link-boxes{
+    flex-wrap: wrap;
+  }
+  footer .content .link-boxes .input-box{
+    width: 40%;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 700px){
+  footer{
+    position: relative;
+  }
+  .content .top .logo-details{
+    font-size: 26px;
+  }
+  .content .top .media-icons a{
+    height: 35px;
+    width: 35px;
+    font-size: 14px;
+    line-height: 35px;
+  }
+  footer .content .link-boxes .box{
+    width: calc(100% / 3 - 10px);
+  }
+  footer .content .link-boxes .input-box{
+    width: 60%;
+  }
+  .bottom-details .bottom_text span,
+  .bottom-details .bottom_text a{
+    font-size: 12px;
+  }
+}
+@media (max-width: 520px){
+  footer::before{
+    top: 145px;
+  }
+  footer .content .top{
+    flex-direction: column;
+  }
+  .content .top .media-icons{
+    margin-top: 16px;
+  }
+  footer .content .link-boxes .box{
+    width: calc(100% / 2 - 10px);
+  }
+  footer .content .link-boxes .input-box{
+    width: 100%;
+  }
+}
+ .middle{
+  display: inline-block;
+  position: relative;
+  top: 90px;
+  padding: 40px;
+  padding-left: 100px;
+  width: 1505px;
+  height: 900px;
+  margin: 10px; 
+ }
+
+
+
+/*   height: 100vh;
+   width: 100vw;*/
+
+ .qoute{
+  /*background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyxBwVNGcBXR1ef8blzAyhOGhhDUk0hRt52A&usqp=CAU); background-repeat: no-repeat; 
+  background-size: cover;*/
+   padding: 0;
+   margin: 0;
+   width: 1300px;
+  height: 500px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+  
+ 
+ }
+ .card{
+   height: 400px;
+   width: 700px;
+   background-color:transparent;
+   position: relative;
+   display: flex;
+   justify-content: center;
+   text-align: center;
+  }
+  .fa{
+   color:rgba(255, 255, 255, 0.133);
+   font-size: 120px;
+   position:absolute;
+   top:10px;
+   left: 300px;
+ }
+ .text{
+   color: rgba(228, 22, 3, 0.985);
+   position: relative;
+   font-size: 40px;
+   font-family: 'Zhi Mang Xing', cursive;
+   margin: 60px 12px 0 12px;
+   line-height: 50px;
+}
+.author{
+   position: absolute;
+   bottom: 50px;
+   right: 15px;
+   font-size: 23px;
+   font-family: 'Rubik',sans-serif;
+   color: rgba(0,0,0,0.5);
+   font-style: italic;
+}
+.card:hover{
+   box-shadow:0 50px 50px 10px rgba(0,0,0,0.1);
+   transform: translateY(-5px);
+}
+.card:hover .fa{
+  color:orange ;
+  
+}
+/*.card:hover .fa1{
+   background:linear-gradient(45deg,#F7BC01,#D56741);
+   -webkit-text-fill-color:transparent;
+  
+}
+/*.card:hover .fa2{
+   background:linear-gradient(45deg,#27d853,#35c9ff  );
+   -webkit-text-fill-color:transparent;*/
+   
+}
+.card:hover .text{
+   color: whitesmoke;
+  text-shadow: 2px 2px 4px black;
+}
+.card:hover .a1{
+   color: #d2902d;
+}
+.card:hover .a2{
+   color: #39c65c;
+}
+
+.container1 {
+  max-width: 1400px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 1em;
+}
+
+.cards {
+  display: grid;
+  grid-auto-columns: 100%;
+  grid-column-gap: 10px;
+  grid-auto-flow: column;
+  padding: 25px 0px;
+  list-style: none;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+.card1 {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: rgb(242, 226, 145);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
+  scroll-snap-align: start;
+  transition: all 0.2s;
+}
+
+.card1:hover {
+  color: rgba(250, 249, 247, 0.99);
+  background: rgba(62, 232, 70, 0.514);
+}
+
+.card1 .card-title {
+  font-size: 20px;
+}
+
+.card1 .card-content {
+  margin: 20px 0;
+  max-width: 85%;
+}
+
+.card1 .card-link-wrapper {
+  margin-top: auto;
+}
+
+.card1 .card-link {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background: green;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.card1:hover .card-link {
+  background: rgb(244, 1, 1);
+}
+
+.cards::-webkit-scrollbar {
+  height: 12px;
+}
+
+.cards::-webkit-scrollbar-thumb,
+.cards::-webkit-scrollbar-track {
+  border-radius: 92px;
+}
+
+.cards::-webkit-scrollbar-thumb {
+  background: var(--darkorange);
+}
+
+.cards::-webkit-scrollbar-track {
+  background: var(--thumb);
+}
+
+@media (min-width: 500px) {
+  .cards {
+    grid-auto-columns: calc(50% - 10px);
+    grid-column-gap: 20px;
+  }
+}
+
+@media (min-width: 700px) {
+  .cards {
+    grid-auto-columns: calc(calc(100% / 3) - 20px);
+    grid-column-gap: 30px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .cards {
+    grid-auto-columns: calc(25% - 30px);
+    grid-column-gap: 40px;
+  }
+}
+
+.box-shadow {
+    box-shadow: inset 10px 10px 8px -10px #CCC, inset -10px -10px 8px -10px #CCC;
+}
+.content-box-wrapper .content-box h4{
+  font-weight: 500;
+}
+
+.content-box-wrapper .content-box p{
+  color: #777;
+  font-size: 18px;
+  text-align: center;
+}
+.content-box{
+    text-align: center;
+    padding: 15px;
+    height: 100%;
+    border-radius: 4px;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+.content-box:hover{
+    background:#ef05052a;
+    box-shadow: 2px 2px 15px 0 rgba(135,135,135, 0.4);
+    transition: all 0.5s ease 0s;
+}
+.content-box .finbyz-icon img{
+    height:85px;
+}
+.content-box .finbyz-icon{
+    margin: 0 auto;
+}
+
+
+
+hr.lines {
+    margin: auto;
+    width: 100px;
+    position: relative;
+    border-top: 2px solid #0071bc;
+    margin-top: 15px;
+}
+hr.lines:before {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    top: -11px;
+    border: 6px solid #D6D8FF;
+    border-radius: 50%;
+    background: #0071bc;
+    left: 40px;
+    animation: pulse 2s infinite;
+}
+/* pules effect */
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(70,118,250, 0.4);
+  }
+  70% {
+      -webkit-box-shadow: 0 0 0 20px rgba(70,118,250, 0);
+  }
+  100% {
+      -webkit-box-shadow: 0 0 0 0 rgba(70,118,250, 0);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(70,118,250, 0.4);
+    box-shadow: 0 0 0 0 rgba(70,118,250, 0.4);
+  }
+  70% {
+      -moz-box-shadow: 0 0 0 20px rgba(70,118,250, 0);
+      box-shadow: 0 0 0 20px rgba(70,118,250, 0);
+  }
+  100% {
+      -moz-box-shadow: 0 0 0 0 rgba(70,118,250, 0);
+      box-shadow: 0 0 0 0 rgba(70,118,250, 0);
+  }
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#" class="brand">
+            <h2 style="margin-top: 30px;">KRYPTONITES</h2></a>
+            <input type="checkbox" class="nav-btn">
+            <ul class="menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="#">
+                 <div class="dropdown">
+                  <span>REGISTRATION</span>
+                  <div class="dropdown-content">
+                    <p> <a href="finalfac.html"> Faculty</a></p>
+                    <p> <a href="finalstu.html"> Student</a></p>
+                    </div>
+                 </div>
+                </a></li>
+                <li><a href="#" >REVIEW</a></li>
+                <li><a href="header.html">FACULTY DETAILS</a></li>
+                <li><a href="tel:7019400282">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+      <div class="middle">
+       <div class="qoute">
+        <div class="card">
+          <i class="fa1 fa fa-quote-right" aria-hidden="true"></i>
+          <div class="text">
+            Education is the best friend. An educated person is respected everywhere. Education beats the beauty and the youth.
+          </div>
+          <div class="author a1">- CHANAKYA</div>
+       </div>
+      <!-- <div class="card">
+          <i class="fa2 fa fa-quote-right" aria-hidden="true"></i>
+          <div class="text">
+             Lorem ipsum dolor sit amet, solum diceret sed ad. 
+             Per soluta insolens cu. Qui at nostrud meliore,
+             an quo dicam appetere  
+          </div>
+          <div class="author a2">- Author Name</div>
+       </div>-->
+       </div>
+       <div>
+        <h1 style="font-size: 80px;">EDUCARE</h1>
+        <p style="font-size: 30px">This website provides you lots of information about the education and this is a all in one website where you can train yourself from basics till the expertise level. Here you can join as a trainer and also like a learner.</p> 
+        
+      </div>
+      </div>
+      <div class="containersss">
+    </div> 
+    <div class="mt-50 box-shadow pt-50 pb-50">
+    <div class="container">
+    <div class="row">
+    <div class="col-md-12 text-center">
+        <h2>Why do you need Edcare ? <span class="t-blue">What is special here</span>?</h2>
+        <hr class="lines pb-4 finbyz-zoomin" style="transform: matrix(1, 0, 0, 1, 0, 0);">
+    </div>
+    </div>
+    <div class="row content-box-wrapper">
+    <div class="col-md-4 mt-10">
+        <div class="content-box text-center finbyz-fadeinup" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+            <div class="finbyz-icon finbyz-zoomin" style="transform: matrix(1, 0, 0, 1, 0, 0);">
+                <img alt="Identify financial risk" src="https://previews.123rf.com/images/carmenbobo/carmenbobo1407/carmenbobo140700091/29786863-stamp-with-text-all-in-one-inside-vector-ilustration.jpg" title="Identify financial risk"></div>
+            <h4>All in One</h4>
+            <p>This platform provides you all the information about education</p>
+        </div>
+    </div>
+    <div class="col-md-4 mt-10">
+        <div class="content-box text-center finbyz-fadeinup" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+            <div class="finbyz-icon finbyz-zoomin" style="transform: matrix(1, 0, 0, 1, 0, 0);"><img alt="Treasury Policy" src="https://www.finbyz.com/static/media/svg/treasury-policy.svg" title="Treasury Policy"></div>
+            <h4>Policy</h4>
+            <p>In this platform you can get online tutor,offline tutor,home tutor and also u will be given points which will be further turned as money.</p>
+        </div>
+    </div>
+    <div class="col-md-4 mt-10">
+        <div class="content-box text-center finbyz-fadeinup" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+            <div class="finbyz-icon finbyz-zoomin" style="transform: matrix(1, 0, 0, 1, 0, 0);"><img alt="Fx Market Information" src="https://www.finbyz.com/static/media/svg/fx-market-information .svg" title="Fx Market Information"></div>
+            <h4>No1 in the Market</h4>
+            <p>Our website stands at the top of all the educational webpage.</p>
+        </div>
+    </div>
+    <div class="col-md-4 mt-10">
+        <div class="content-box text-center finbyz-fadeinup" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+            <div class="finbyz-icon finbyz-zoomin" style="transform: matrix(1, 0, 0, 1, 0, 0);"><img alt="Unbiased Advice" src="https://www.finbyz.com/static/media/svg/unbised-advise.svg" title="Unbiased Advice"></div>
+            <h4>No time waste</h4>
+            <p>Here you can get lots of knowledge and materials at one place.</p>
+        </div>
+    </div>
+    <div class="col-md-4 mt-10">
+        <div class="content-box text-center finbyz-fadeinup" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+            <div class="finbyz-icon finbyz-zoomin" style="transform: matrix(1, 0, 0, 1, 0, 0);"><img alt="Expertise in derivatives" src="https://www.finbyz.com/static/media/svg/icon-passion-for-market.svg" title="Expertise in derivatives"></div>
+            <h4>Achieve goals</h4>
+            <p>You can make your students or Teachers happy by Achieving your goals.</p>
+        </div>
+    </div>
+    <div class="col-md-4 mt-10">
+        <div class="content-box text-center finbyz-fadeinup" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+            <div class="finbyz-icon finbyz-zoomin" style="transform: matrix(1, 0, 0, 1, 0, 0);"><img alt="Stress Testing" src="https://www.finbyz.com/static/media/svg/stress-testing.svg" title="Stress Testing"></div>
+            <h4>Self Testing</h4>
+            <p>Understand,learn and enjoy by testing yourselves.</p>
+        </div>
+    </div>
+    </div>
+    </div>
+  </div>
+      <div class="container1">
+        <h2>Reviews</h2>
+        <ul class="cards">
+          <li class="card1">
+            <div>
+              <h3 class="card-title">Kare O.</h3>
+              <div class="card-content">
+                <p>"Keep up the excellent work. Website about education is awesome! I got a best tutor"
+                  </p>
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="" class="card-link">read more</a>
+            </div>
+          </li>
+          <li class="card1">
+            <div>
+              <h3 class="card-title">Fawn</h3>
+              <div class="card-content">
+                <p>"After using free education my business skyrocketed! It really saves me time and effort. free education is exactly what our business has been lacking."</p>
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="" class="card-link">Read More</a>
+            </div>
+          </li>
+          <li class="card1">
+            <div>
+              <h3 class="card-title">Vinay</h3>
+              <div class="card-content">
+                <p>"The very best. I am really satisfied with my all in one website. The very best."</p>
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="" class="card-link">Read More</a>
+            </div>
+          </li>
+          <li class="card1">
+            <div>
+              <h3 class="card-title">Ramakrishna</h3>
+              <div class="card-content">
+                <p>"I couldn't have asked for more than this. I don't always clop, but when I do, it's because of educare website."</p>
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="" class="card-link">Read More</a>
+            </div>
+          </li>
+          <li class="card1">
+            <div>
+              <h3 class="card-title">Jyothi</h3>
+              <div class="card-content">
+                <p>"Thank You!"</p>
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="" class="card-link">Read More</a>
+            </div>
+          </li>
+          <li class="card1">
+            <div>
+              <h3 class="card-title">Mahathi</h3>
+              <div class="card-content">
+                <p>"Your website is truly upstanding and is behind its goal 100%. It's incredible. It's all good. "</p>
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="" class="card-link">Read More</a>
+            </div>
+          </li>
+          <li class="card1">
+            <div>
+              <h3 class="card-title">Radha</h3>
+              <div class="card-content">
+                <p>Considers problems as a challenge and enjoys finding creative yet appropriate solutions. Educare is able to work out her own solutions, but also works well with a group to solve problems. </p>
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="" class="card-link">Read More</a>
+            </div>
+          </li>
+          <li class="card1">
+            <div>
+              <h3 class="card-title">Manoj</h3>
+              <div class="card-content">
+                <p> I rate 10/10 for this website</p>
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="" class="card-link">Read More</a>
+            </div>
+          </li>
+          <li class="card1">
+            <div>
+              <h3 class="card-title">Sathosh</h3>
+              <div class="card-content">
+                <p>"This is a very interative and amazing tool. I easily learn complex things and I got a best home tutor"</p>
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="" class="card-link">Read More</a>
+            </div>
+          </li>
+          <li class="card1">
+            <div>
+              <h3 class="card-title">Dr Harsha</h3>
+              <div class="card-content">
+                <p>"It's just amazing. Man, this thing is getting better and better as I learn more about it. I have gotten at least 50 times the value from learn."</p>
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="" class="card-link">Read More</a>
+            </div>
+          </li>
+          <li class="card1">
+            <div>
+              <h3 class="card-title">Darshan</h3>
+              <div class="card-content">
+                <p>"By this I have got a best tutor ever , my tutor is better than Allen lecturors"</p>
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="" class="card-link">Read More</a>
+            </div>
+          </li>
+          <li class="card1">
+            <div>
+              <h3 class="card-title">Pavan</h3>
+              <div class="card-content">
+                <p>"As I am not able to cope up with the offline classes here I have opted for online and this is really cool and awesome"</p>
+              </div>
+            </div>
+            <div class="card-link-wrapper">
+              <a href="" class="card-link">Read More</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    <footer>
+        <div class="content" >
+          <div class="top">
+            <div class="logo-details">
+                
+              <span class="logo_name">KRYPTONITES</span>
+            </div>
+            <div class="media-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="link-boxes">
+            <ul class="box">
+              <li class="link_name">EDCURE</li>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Teach</a></li>
+              <li><a href="#">Learn</a></li>
+              <li><a href="#">Get started</a></li>
+            </ul>
+            <ul class="box">
+              <li class="link_name">Services</li>
+              <li><a href="#">online classes</a></li>
+              <li><a href="#">home tution</a></li>
+              <li><a href="#">tution center</a></li>
+              
+            </ul>
+            <ul class="box">
+              <li class="link_name">Account</li>
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">My account</a></li>
+              <li><a href="#">Course opted</a></li>
+              <li><a href="#">Purchase</a></li>
+            </ul>
+            <ul class="box">
+              <li class="link_name">Courses</li>
+              <li><a href="#">Schooling education</a></li>
+              <li><a href="#">UG education</a></li>
+              <li><a href="#">PG education</a></li>
+              <li><a href="#">Others</a></li>
+            </ul>
+            <ul class="box input-box">
+              <li class="link_name">Subscribe</li>
+              <li><input type="text" placeholder="Enter your email"></li>
+              <li><input type="button" value="Subscribe"></li>
+            </ul>
+          </div>
+        </div>
+        <div class="bottom-details">
+          <div class="bottom_text">
+            <span class="copyright_text">Copyright © 2021 <a href="#">Kryptonites.</a>All rights reserved</span>
+            <span class="policy_terms">
+              <a href="#">Privacy policy</a>
+              <a href="#">Terms & condition</a>
+            </span>
+          </div>
+        </div>
+      </footer>
+    
+</body>
+</html>

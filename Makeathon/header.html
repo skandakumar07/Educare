@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Kanit' rel='stylesheet'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+
+    <title>Faculty Details</title>
+    <style>
+        .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        background:linear-gradient(to top right, #3333ff 0%, #cc0066 100%);
+      }
+      
+      .card {
+        position: relative;
+        width: 300px;
+        height: 400px;
+        margin: 40px;
+        perspective: 1000px;
+      }
+      
+      .card:hover .card-front {
+        transform: rotateY(-180deg);
+      }
+      
+      .card:hover .card-back {
+        transform: rotateY(0deg);
+      }
+      
+      .card-inner {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+      }
+      
+      .card-front,
+      .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+      }
+      
+      .card-front {
+        
+        background-position: 50% 50%;
+        background-size: cover;
+        background-color: #0a0909;
+        border-radius: 50px;
+        border-style:ridge;
+      }
+      
+      .card-back {
+        transform: rotateY(180deg);
+        /*background-color:rgb(166, 214, 156);*/
+        background-color: #AEE6E6;
+        color: #fff;
+        text-align: center;
+        color:black;
+        border-radius:50px;
+      }
+    
+      .card-back h2 {
+        font-size: 30px;
+        margin-top: 70px;
+        margin-bottom: 50px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    
+      }
+      
+      .card-back span {
+        font-size: 20px;
+        font-family: serif;
+
+      }
+      
+      .card-back .shadow {
+        font-size: 16px;
+        line-height: 25px;
+        font-family: 'Shantell Sans', cursive;
+      }
+      
+      .media-icons {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+       
+      }
+      
+      .media-icons a {
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        margin: 0 8px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 40px;
+        color: #fff;
+        font-size: 17px;
+        text-decoration: none;
+        transition: all 0.4s ease;
+      }
+      
+      .media-icons a:nth-child(1) {
+        background: #4267b2;
+      }
+      
+      .media-icons a:nth-child(1):hover {
+        color: #4267b2;
+        background: #fff;
+      }
+      
+      .media-icons a:nth-child(2) {
+        background: #1da1f2;
+      }
+      
+      .media-icons a:nth-child(2):hover {
+        color: #1da1f2;
+        background: #fff;
+      }
+      
+      .media-icons a:nth-child(3) {
+        background: #e1306c;
+      }
+      
+      .media-icons a:nth-child(3):hover {
+        color: #e1306c;
+        background: #fff;
+      }
+      
+      .media-icons a:nth-child(4) {
+        background: #0077b5;
+      }
+      
+      .media-icons a:nth-child(4):hover {
+        color: #0077b5;
+        background: #fff;
+      }
+      
+      .media-icons a:nth-child(5) {
+        background: #ff0000;
+      }
+      
+      .media-icons a:nth-child(5):hover {
+        color: #ff0000;
+        background: #fff;
+      }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-front" style="background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0nuHduqJ3fWlWVgp1YQb0UOs-iDgm-T9CiViKOCQcTeGOlT3eOeQ5K1tc6Oop0W4IovY&usqp=CAU); background-repeat: no-repeat; 
+                background-size: cover;"></div>
+                <div class="card-back">
+                  <h2>Prakash Raj</h2>
+                  <span><b>Faculty id: 98572</b></span>
+                  <p class="shadow">This is Prakash Raj, entrepreneur. I can  suggestions to people who r personally more interested to start up own businesses. I can teach UG students as i am currently even working as a tutor in Allen.</p>
+                  <div class="media-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                  <div class="card-front" style="background: url(https://img.freepik.com/free-photo/happiness-wellbeing-confidence-concept-cheerful-attractive-african-american-woman-curly-haircut-cross-arms-chest-self-assured-powerful-pose-smiling-determined-wear-yellow-sweater_176420-35063.jpg);" ></div>
+                  <div class="card-back">
+                    <h2>Senorita</h2>
+                    <span><b>Faculty id: 985763</b></span>
+                    <p class="shadow">This is Senorita. I am a fashion designer and i completed B.Sc in nuclear biology.I love teaching practically as a part time job, so do enjoy learning and gaining practical knowledge </p>
+                    <div class="media-icons">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-inner">
+                  <div class="card-front" style="background: url(https://mumbaimirror.indiatimes.com/thumb/66299722.cms?resizemode=4&width=400);  background-repeat: no-repeat; 
+                  background-size: cover;"></div>
+                  <div class="card-back">
+                    <h2>Narayana Murthy</h2>
+                    <span><b>Faculty id: 985764</b></span>
+                    <p class="shadow">This is Narayana Murthy. I work as a senior most professor in BMS College of Engineering and i have a experience of 32 years.I have completed my Phd in CSE. I enjoy teaching and sharing knowledge</p>
+                    <div class="media-icons">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-inner">
+                  <div class="card-front" style="background: url(https://www.adgully.com/img/400/201701/in-jasani.jpeg);  background-repeat: no-repeat; 
+                  background-size: cover;"></div>
+                  <div class="card-back">
+                    <h2>Vibhishan</h2>
+                    <span><b>Faculty id: 985765</b></span>
+                    <p class="shadow">This is Vibhishan. I work as a HR for Accenture. I am a Gold medalist in MBA and i can solve all the business queries. I can provide any information realted to stock market </p>
+                    <div class="media-icons">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-inner">
+                  <div class="card-front" style="background: url(https://static.toiimg.com/imagenext/toiblogs/photo/blogs/wp-content/uploads/2016/09/Ramachandra-Guha.jpg);  background-repeat: no-repeat; 
+                  background-size: cover;" ></div>
+                  <div class="card-back">
+                    <h2>DR.Madhavan</h2>
+                    <span><b>Faculty id: 985766</b></span>
+                    <p class="shadow">This is Madhavan. The Senior most faculty in PESIT. I am expert in web development and app development.I can teach you lots and lots of things based on developments</p>
+                    <div class="media-icons">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-inner">
+                  <div class="card-front" style="background: url(https://www.freecodecamp.org/news/content/images/2021/06/mainDP.jpg); background-repeat: no-repeat; 
+                  background-size: cover;"></div>
+                  <div class="card-back">
+                    <h2>Jane Doe</h2>
+                    <span><b>Faculty id: 985767</b></span>
+                    <p class="shadow">This is Jane. I am expert in coding and can provide you knowledge on any language. I now work as a senior most data analysist in SPLUNK. This will be a  new experience for me to teach. </p>
+                    <div class="media-icons">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-inner">
+                  <div class="card-front" style="background: url(data:image/jpeg;base64,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); background-repeat: no-repeat; 
+                  background-size: cover;"></div>
+                  <div class="card-back">
+                    <h2>Mrs.Jebisha</h2>
+                    <span><b>Faculty id: 985768</b></span>
+                    <p class="shadow">I am Jebisha. I have completed my M Tech in Computer Science Engineering in Indian Institute of Technology. Currently, I am working as a professor in Acharya Institute of Technology.</p>
+                    <div class="media-icons">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-inner">
+                  <div class="card-front" style="background: url(https://i.stack.imgur.com/Hci3K.jpg); background-repeat: no-repeat; 
+                  background-size: cover;"></div>
+                  <div class="card-back">
+                    <h2>Ms.Larisa</h2>
+                    <span><b>Faculty id: 985769</b></span>
+                      <p class="shadow"> I am Larisa.  I have completed my B.Sc in Biochemistry in Garden City College. I am professor in MS Ramaiah University of Applied Sciences since 2 years. I am now persuing my PHd on genetics. </p>
+                    <div class="media-icons">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+          </div>
+    <style>
+        nav * {
+            box-sizing: border-box;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #ccadda;
+            color: #f6f6f6;
+        }
+        nav .container1{
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+            padding: 0 1.5em;
+        }
+        nav a{
+            text-decoration: none;
+            color: #f6f6f6;
+            transition: 0.3s;
+        }
+        nav a:hover{
+            color: #005dc7;
+        }
+        nav .menu{
+            padding: 0;
+            margin: 0;
+        }
+        nav .menu li{
+            display: inline-block;
+            margin: 0 0.7em;
+        }
+        nav .nav-btn::before{
+            font-family: 'FontAwesome';
+            content: '\f0c9\ ';
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #373737;
+            color: #fff;
+            width: 100%;
+            height: 100%;
+            font-size: 2.1em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.4s;
+        }
+        nav .nav-btn{
+            width: 2.5em;
+            height: 2.5em;
+            display: none;
+            position: relative;
+            cursor: pointer;
+        }
+        nav .nav-btn:hover:before{
+            color: #005dc7;
+        }
+      @media screen and (max-width: 900px){
+        nav .nav-btn:checked + .menu{
+            height: 12em;
+            overflow-y: scroll;
+        }
+        nav .menu{
+            position: absolute;
+            top: 4.7em;
+            left: 0;
+            width: 100%;
+            background: #1f1f1f;
+            padding: 0 1.5em;
+            overflow-y: hidden;
+            transition: 0.7s;
+            height: 0;
+        }
+        nav .menu li{
+            display: block;
+            margin: 1em 0;
+        }
+        nav .menu li:nth :nth-child(1){
+            margin-top: 1.5em;
+        }
+        nav .nav-btn{
+            display: block;
+        }
+
+      }
+
+
+
+
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+body{
+  min-height: 100vh;
+  width: 100%;
+  /*background: #141313;*/
+  background: #ccadda;
+}
+footer{
+  position: relative;
+  background: transparent;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+footer::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 100px;
+  height: 1px;
+  width: 100%;
+  background: #9f9fbe;
+}
+footer .content{
+  max-width: 1250px;
+  margin: auto;
+  padding: 30px 40px 40px 40px;
+}
+footer .content .top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.content .top .logo-details{
+  color: #fff;
+  font-size: 30px;
+}
+.content .top .media-icons{
+  display: flex;
+}
+.content .top .media-icons a{
+  height: 40px;
+  width: 40px;
+  margin: 0 8px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+  font-size: 17px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+.top .media-icons a:nth-child(1){
+  background: #4267B2;
+}
+.top .media-icons a:nth-child(1):hover{
+  color: #4267B2;
+  background: #fff;
+}
+.top .media-icons a:nth-child(2){
+  background: #1DA1F2;
+}
+.top .media-icons a:nth-child(2):hover{
+  color: #1DA1F2;
+  background: #fff;
+}
+.top .media-icons a:nth-child(3){
+  background: #E1306C;
+}
+.top .media-icons a:nth-child(3):hover{
+  color: #E1306C;
+  background: #fff;
+}
+.top .media-icons a:nth-child(4){
+  background: #0077B5;
+}
+.top .media-icons a:nth-child(4):hover{
+  color: #0077B5;
+  background: #fff;
+}
+.top .media-icons a:nth-child(5){
+  background: #FF0000;
+}
+.top .media-icons a:nth-child(5):hover{
+  color: #FF0000;
+  background: #fff;
+}
+footer .content .link-boxes{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+footer .content .link-boxes .box{
+  width: calc(100% / 5 - 10px);
+}
+.content .link-boxes .box .link_name{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  position: relative;
+}
+.link-boxes .box .link_name::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 35px;
+  background: #fff;
+}
+.content .link-boxes .box li{
+  margin: 6px 0;
+  list-style: none;
+}
+.content .link-boxes .box li a{
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: all 0.4s ease
+}
+.content .link-boxes .box li a:hover{
+  opacity: 1;
+  text-decoration: underline;
+}
+.content .link-boxes .input-box{
+  margin-right: 55px;
+}
+.link-boxes .input-box input{
+  height: 40px;
+  width: calc(100% + 55px);
+  outline: none;
+  border: 2px solid #AFAFB6;
+  background: black;
+  border-radius: 4px;
+  padding: 0 15px;
+  font-size: 15px;
+  color:whitesmoke;
+  margin-top: 5px;
+}
+.link-boxes .input-box input::placeholder{
+  color: #AFAFB6;
+  font-size: 16px;
+}
+.link-boxes .input-box input[type="button"]{
+  background: #fff;
+  color: black;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 4px 0;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.input-box input[type="button"]:hover{
+  opacity: 1;
+}
+footer .bottom-details{
+  width: 100%;
+  background: black;
+}
+footer .bottom-details .bottom_text{
+  max-width: 1250px;
+  margin: auto;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.bottom-details .bottom_text span,
+.bottom-details .bottom_text a{
+  font-size: 14px;
+  font-weight: 300;
+  color: #fff;
+  opacity: 0.8;
+  text-decoration: none;
+}
+.bottom-details .bottom_text a:hover{
+  opacity: 1;
+  text-decoration: underline;
+}
+.bottom-details .bottom_text a{
+  margin-right: 10px;
+}
+@media (max-width: 900px) {
+  footer .content .link-boxes{
+    flex-wrap: wrap;
+  }
+  footer .content .link-boxes .input-box{
+    width: 40%;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 700px){
+  footer{
+    position: relative;
+  }
+  .content .top .logo-details{
+    font-size: 26px;
+  }
+  .content .top .media-icons a{
+    height: 35px;
+    width: 35px;
+    font-size: 14px;
+    line-height: 35px;
+  }
+  footer .content .link-boxes .box{
+    width: calc(100% / 3 - 10px);
+  }
+  footer .content .link-boxes .input-box{
+    width: 60%;
+  }
+  .bottom-details .bottom_text span,
+  .bottom-details .bottom_text a{
+    font-size: 12px;
+  }
+}
+@media (max-width: 520px){
+  footer::before{
+    top: 145px;
+  }
+  footer .content .top{
+    flex-direction: column;
+  }
+  .content .top .media-icons{
+    margin-top: 16px;
+  }
+  footer .content .link-boxes .box{
+    width: calc(100% / 2 - 10px);
+  }
+  footer .content .link-boxes .input-box{
+    width: 100%;
+  }
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+ 
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container1">
+            <a href="#" class="brand">
+            <h2>KRYPTONITES</h2></a>
+            <input type="checkbox" class="nav-btn">
+            <ul class="menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="#">
+                  <div class="dropdown">
+                   <span>REGISTRATION</span>
+                   <div class="dropdown-content">
+                     <p> <a href=""> Faculty</a></p>
+                     <p> <a href="" > Student</a></p>
+                     </div>
+                  </div>
+                 </a></li>
+                 <li><a href="#">REVIEW</a></li>
+                 <li><a href="#">FACULTY DETAILS</a></li>
+                 <li><a href="tel:7019400282">CONTACT</a></li>
+             </ul>
+            </ul>
+        </div>
+    </nav>
+  
+    <footer>
+        <div class="content">
+          <div class="top">
+            <div class="logo-details">
+                
+              <span class="logo_name">KRYPTONITES</span>
+            </div>
+            <div class="media-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="link-boxes">
+            <ul class="box">
+              <li class="link_name">EDCURE</li>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Teach</a></li>
+              <li><a href="#">Learn</a></li>
+              <li><a href="#">Get started</a></li>
+            </ul>
+            <ul class="box">
+              <li class="link_name">Services</li>
+              <li><a href="#">App design</a></li>
+              <li><a href="#">Web design</a></li>
+              <li><a href="#">Logo design</a></li>
+              <li><a href="#">Banner design</a></li>
+            </ul>
+            <ul class="box">
+              <li class="link_name">Account</li>
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">My account</a></li>
+              <li><a href="#">Prefrences</a></li>
+              <li><a href="#">Purchase</a></li>
+            </ul>
+            <ul class="box">
+              <li class="link_name">Courses</li>
+              <li><a href="#">HTML & CSS</a></li>
+              <li><a href="#">JavaScript</a></li>
+              <li><a href="#">Photography</a></li>
+              <li><a href="#">Photoshop</a></li>
+            </ul>
+            <ul class="box input-box">
+              <li class="link_name">Subscribe</li>
+              <li><input type="text" placeholder="Enter your email"></li>
+              <li><input type="button" value="Subscribe"></li>
+            </ul>
+          </div>
+        </div>
+        <div class="bottom-details">
+          <div class="bottom_text">
+            <span class="copyright_text">Copyright © 2021 <a href="#">CodingLab.</a>All rights reserved</span>
+            <span class="policy_terms">
+              <a href="#">Privacy policy</a>
+              <a href="#">Terms & condition</a>
+            </span>
+          </div>
+        </div>
+      </footer>
+    
+    </body>
+    </html>
+     
+</body>
+</html
